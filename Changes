@@ -1,6 +1,14 @@
 Revision History for Catalyst-Model-RDF
 =======================================
 
+0.02
+----
+
+commit 8e1c06ca03398af31b4582ca445985bcc6736b1b
+Author: Thiago Berlitz Rondon <thiago.rondon@gmail.com>
+
+    s/AUTOLOAD/Moose->handles/
+
 ===================================
 End of changes in the last 365 days
 ===================================

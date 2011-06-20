@@ -24,4 +24,4 @@ requires:
 resources:
   bugtracker: http://github.com/maluco/Catalyst-Model-RDF/issues
   repository: git://github.com/maluco/Catalyst-Model-RDF
-version: 0.01
+version: 0.02

@@ -3,7 +3,7 @@ NAME
     RDF::Trine::Model.
 
 VERSION
-    version 0.01
+    version 0.02
 
 ATTRIBUTES
     Format can be: OwnIFn, NTriples, NQuads, Turtle, RDFXML, Notation3 or

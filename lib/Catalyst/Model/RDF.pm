@@ -7,9 +7,7 @@ extends 'Catalyst::Model';
 use RDF::Trine::Model;
 
 # ABSTRACT: RDF model class for Catalyst based on RDF::Trine::Model.
-our $VERSION = '0.01'; # VERSION
-
-our $AUTOLOAD;
+our $VERSION = '0.02'; # VERSION
 
 
 has format => (
@@ -21,18 +19,10 @@ has format => (
 
 has _class => (
     is => 'ro',
-    isa => 'Object',
-    init_arg => undef,
-    lazy => 1,
-    default => sub { RDF::Trine::Model->temporary_model }
+    isa => 'RDF::Trine::Model',
+    default => sub { RDF::Trine::Model->temporary_model },
+    handles => qr/.*/
 );
-
-sub AUTOLOAD {
-    my $self = shift;
-    return if $AUTOLOAD =~ /::DESTROY$/;
-    (my $command = $AUTOLOAD) =~ s/^.*:://;
-    return $self->_class->$command(@_);
-}
 
 sub serializer {
     my $self = shift;
@@ -56,7 +46,7 @@ Catalyst::Model::RDF - RDF model class for Catalyst based on RDF::Trine::Model.
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 ATTRIBUTES
 
